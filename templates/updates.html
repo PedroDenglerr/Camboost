@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Camboost - Updates
+{% endblock %}
+
+{% block content %}
+
+        <section class="image-section">
+            <div class="image-container">
+            <img src="/static/imagenes/updates/code.jpg" alt="Image of people working">
+            <div class="overlay-text">
+                <h1>Updates</h1>
+                <p><a class="image__link" href="/">Home</a> » <span>Updates</span></p>
+            </div>
+            </div>
+        </section>
+    <section class="center">
+        <section class="width">
+                    <section class="updates-section">
+                        {% for update in news_updates %}
+                        <a href="{{ url_for('update_detail', update_id=loop.index) }}">
+                                    <div class="update-box">
+                                        <img src="{{ update.image }}" alt="Update Image">
+                                        <div class="update-content">
+                                            <p class="update-date"><span class="bold-update">CAMBOOST TEAM /</span> {{ update.date }}</p>
+                                            <h2 class="update-title">{{ update.title }}</h2>
+                                            <p class="update-description">{{ update.description }}</p>
+                                        </div>
+                                    </div>
+                        </a>
+                        {% endfor %}
+                    </section>
+        </section>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Camboost - Tips
+{% endblock %}
+
+{% block header_class %}pdfs-header{% endblock %}
+
+{% block content %}
+
+    <section class="simple-banner">
+        <img src="/static/imagenes/banners/bannerl2.jpg" alt="Image of people working">
+    </section>
+
+    <section class="center">
+        <section class="width">
+                    <section class="pdf-section">
+                        <h2>MOCK PDFs</h2>
+                        <div class="pdf-container">
+                            {% for pdf in mock_pdfs %}
+                            <a href="{{ pdf.pdf_url }}" download="{{ pdf.title }}" class="pdf-box">
+                                <img src="{{ pdf.img }}" alt="PDF Icon">
+                                <p>{{ pdf.date }}</p>
+                                <h2>{{ pdf.title }}</h2>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <section class="pdf-section">
+                        <h2>BOOKS PDFs</h2>
+                        <div class="pdf-container">
+                            {% for pdf in book_pdfs %}
+                            <a href="{{ pdf.pdf_url }}" download="{{ pdf.title }}" class="pdf-box">
+                                <img src="{{ pdf.img }}" alt="PDF Icon">
+                                <p>{{ pdf.date }}</p>
+                                <h2>{{ pdf.title }}</h2>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <section class="pdf-section">
+                        <h2>Reading and Use of English PDFs</h2>
+                        <div class="pdf-container">
+                            {% for read in read_pdfs %}
+                            <a href="{{ read.pdf_url }}" download="{{ read.title }}" class="pdf-box">
+                                <img src="{{ read.img }}" alt="PDF Icon">
+                                <p>{{ read.date }}</p>
+                                <h2>{{ read.title }}</h2>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <section class="pdf-section">
+                        <h2>Speaking PDFs</h2>
+                        <div class="pdf-container">
+                            {% for speaking in speaking_pdfs %}
+                            <a href="{{ speaking.pdf_url }}" download="{{ speaking.title }}" class="pdf-box">
+                                <img src="{{ speaking.img }}" alt="PDF Icon">
+                                <p>{{ speaking.date }}</p>
+                                <h2>{{ speaking.title }}</h2>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+                    <section class="pdf-section">
+                        <h2>Writing PDFs</h2>
+                        <div class="pdf-container">
+                            {% for writing in writing_pdfs %}
+                            <a href="{{ writing.pdf_url }}" download="{{ writing.title }}" class="pdf-box">
+                                <img src="{{ writing.img }}" alt="PDF Icon">
+                                <p>{{ writing.date }}</p>
+                                <h2>{{ writing.title }}</h2>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </section>
+        </section>
+     </section>
+{% endblock %}

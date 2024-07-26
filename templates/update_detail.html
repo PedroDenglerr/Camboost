@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+        Camboost - Updates
+{% endblock %}
+
+{% block content %}
+
+        <div class="center">
+            <div class="width">
+                        <div class="update-detail-specific">
+                            <p class="update-date-specific"><span class="bold-update">CAMBOOST TEAM /</span> {{ update.date }}</p>
+                            <h1>{{ update.title }}</h1>
+                            {% for paragraph in update.paragraphs %}
+                                <p>{{ paragraph }}</p>
+                            {% endfor %}
+                        </div>
+            </div>
+        </div>
+        
+{% endblock %}
